@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rise Again | Your New Beginning</title>
+    <link rel="stylesheet" href="style.css">
+      <link rel="icon" type="image/png" href="Rise Again_ Faith and Resilience.png">
+
+</head>
+<body>
+
+<!-- HOME PAGE -->
+<section id="homePage">
+    <nav class="navbar">
+        <h2>🌱 Rise  <span> Again</span></h2>
+
+        <div class="nav-links">
+            <a href="#homePage">Home</a>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <button onclick="showPage('loginPage')">Login</button>
+            <button class="primary" onclick="showPage('signupPage')">
+                Sign Up
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero" id="about">
+        <div class="hero-content">
+            <p class="tagline">YOUR NEW BEGINNING STARTS HERE</p>
+
+            <h1>
+                "The righteous may fall seven times,<span>
+        but they rise again.</span>"<br>
+                 <strong> Proverbs 24:16</strong>
+
+            </h1>
+
+            <p>
+                Your journey isn't over. Every mistake is a 
+                    lesson,
+                     every challenge is a chance , and every new 
+                    day
+                      is an opportunity to Restart.
+            </p>
+
+            <button class="primary big"
+                onclick="showPage('signupPage')">
+                Start Your Journey →
+            </button>
+        </div>
+
+        <div class="hero-image">
+            🌱
+            <h2><b> Rise Again <b> –
+                 Plan • Learn • Improve • Achieve</h2>
+            <p>Small steps create big changes.</p>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <h2>Everything You Need to Rise Again</h2>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                📅
+                <h3>Study Planner</h3>
+                <p>Organize your daily study schedule.</p>
+            </div>
+
+            <div class="feature-card">
+                🤖
+                <h3>AI Study Buddy</h3>
+                <p>Get study guidance and motivation.</p>
+            </div>
+
+            <div class="feature-card">
+                📊
+                <h3>Track Progress</h3>
+                <p>Celebrate your learning progress.</p>
+            </div>
+
+            <div class="feature-card">
+                💜
+                <h3>Daily Motivation</h3>
+                <p>Get inspired to keep moving forward.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>© 2026 Rise Again | All Rights Reserved. | Your New Beginning 🌱</footer>
+</section>
+
+
+<!-- LOGIN PAGE -->
+<section id="loginPage" class="auth-page hidden">
+    <div class="auth-card">
+        <h1>Welcome Back 💜</h1>
+        <p>Continue your journey with Rise Again.</p>
+
+        <form onsubmit="demoLogin(event)">
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" required>
+
+            <label>Password</label>
+            <input type="password" placeholder="Enter password" required>
+
+            <button class="primary full">Login</button>
+        </form>
+
+        <p>New here?
+            <a href="#" onclick="showPage('signupPage')">
+                Create an account
+            </a>
+        </p>
+
+        <a href="#" onclick="showPage('homePage')">← Back Home</a>
+    </div>
+</section>
+
+
+<!-- SIGNUP PAGE -->
+<section id="signupPage" class="auth-page hidden">
+    <div class="auth-card">
+        <h1>Create Account 🌱</h1>
+        <p>Your new beginning starts today.</p>
+
+        <form onsubmit="demoLogin(event)">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name" required>
+
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" required>
+
+            <label>Password</label>
+            <input type="password" placeholder="Create password" required>
+
+            <button class="primary full">Sign Up</button>
+        </form>
+
+        <p>Already registered?
+            <a href="#" onclick="showPage('loginPage')">Login</a>
+        </p>
+
+        <a href="#" onclick="showPage('homePage')">← Back Home</a>
+    </div>
+</section>
+
+
+<!-- DASHBOARD -->
+<section id="dashboardPage" class="hidden">
+
+    <aside class="sidebar">
+        <h2>🌱 Rise Again</h2>
+        <p class="side-label">MAIN MENU</p>
+
+        <button class="menu-item active"
+            onclick="openSection('dashboard')">🏠 Dashboard</button>
+
+        <button class="menu-item"
+            onclick="openSection('planner')">📅 Study Planner</button>
+
+        
+        <button class="menu-item"
+            onclick="openSection('chatbot')">🤖 AI Study Buddy</button>
+
+        <button class="menu-item"
+            onclick="openSection('progress')">📊 My Progress</button>
+
+        <button class="menu-item"
+            onclick="openSection('motivation')">💡 Motivation</button>
+
+        <div class="sidebar-bottom">
+            <button class="menu-item" onclick="toggleTheme()">🌙 Dark Mode</button>
+            <button class="menu-item" onclick="logout()">↪ Logout</button>
+        </div>
+    </aside>
+
+
+    <main class="main-content">
+
+        <!-- DASHBOARD HOME -->
+        <div id="dashboardSection" class="app-section">
+            <div class="topbar">
+                <div>
+                    <h1>Welcome Back! 👋</h1>
+                    <p>Every small step brings you closer to success.</p>
+                </div>
+                <span class="profile">🌸 Student</span>
+            </div>
+
+            <div class="quote-banner">
+                <p>✨ TODAY'S MOTIVATION</p>
+                <h2 id="dashboardQuote">
+                    Believe in yourself. You are capable of great things.
+                </h2>
+                <button onclick="newQuote()">Next Quote ↻</button>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    📚
+                    <h2 id="totalTasks">0</h2>
+                    <p>Total Tasks</p>
+                </div>
+
+                <div class="stat-card">
+                    ✅
+                    <h2 id="completedTasks">0</h2>
+                    <p>Completed Tasks</p>
+                </div>
+
+                <div class="stat-card">
+                    📈
+                    <h2 id="progressPercent">0%</h2>
+                    <p>Study Progress</p>
+                </div>
+            </div>
+
+            <div class="content-card">
+                <h2>Today's Study Plan 📅</h2>
+                <div id="dashboardTasks">
+                    <p>No tasks yet. Add your first study task!</p>
+                </div>
+
+                <button class="primary"
+                    onclick="openSection('planner')">
+                    Create Study Plan
+                </button>
+            </div>
+
+            <div class="content-card">
+                <h2>Need someone to guide you? 🤖</h2>
+                <p>Your AI Study Buddy is ready to help you.</p>
+                <button class="primary"
+                    onclick="openSection('chatbot')">
+                    Chat Now →
+                </button>
+            </div>
+        </div>
+
+
+        <!-- STUDY PLANNER -->
+        <div id="plannerSection" class="app-section hidden">
+            <h1>My Study Planner 📅</h1>
+            <p>Plan today. Improve tomorrow.</p> <br>
+
+            <div class="content-card">
+                <h2>Add a New Task</h2>
+
+                <input id="taskInput"
+                    type="text"
+                    placeholder="Enter subject or study task">
+
+                <input id="taskDate" type="date">
+
+                <button class="primary" onclick="addTask()">
+                    + Add Task
+                </button>
+            </div>
+
+            <div class="content-card">
+                <h2>My Tasks</h2>
+                <div id="taskList"></div>
+            </div>
+        </div>
+
+        
+
+        <!-- AI CHATBOT -->
+        <div id="chatbotSection" class="app-section hidden">
+            <h1>AI Study Buddy 🤖</h1>
+            <p>Your friendly study companion.</p>
+
+            <div class="chat-card">
+                <div id="chatMessages" class="chat-messages">
+                    <div class="bot-message">
+                        Hello! 🌱 I'm your Study Buddy.
+                        How can I help you today?
+                    </div>
+                </div>
+
+                <form id="chatForm" class="chat-input">
+                    <input id="chatInput"
+                        type="text"
+                        placeholder="Ask me anything about studying..."
+                        required>
+
+                    <button class="primary">Send ➤</button>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- PROGRESS -->
+        <div id="progressSection" class="app-section hidden">
+            <h1>My Progress 📊</h1>
+            <p>Every completed task is a small victory.</p>
+            <br>
+            <div class="content-card">
+                <h2>Overall Study Progress</h2>
+
+                <div class="progress-track">
+                    <div id="progressBar"></div>
+                </div>
+
+                <h2 id="progressText">0% Completed</h2>
+                <p id="progressDetails">0 out of 0 tasks completed.</p>
+            </div>
+        </div>
+
+
+        <!-- MOTIVATION -->
+        <div id="motivationSection" class="app-section hidden">
+            <h1>Daily Motivation 💜</h1>
+            <p>A little motivation can make a big difference.</p>
+
+            <div class="motivation-card">
+                <span>🌸 ✨ 🌱</span>
+                <h2 id="motivationQuote">
+                    Your current situation is not your final destination.
+                </h2>
+
+                <button class="primary" onclick="newQuote()">
+                    Next Quote ↻
+                </button>
+
+                <button onclick="copyQuote()">Copy Quote</button>
+            </div>
+        </div>
+
+    </main>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
